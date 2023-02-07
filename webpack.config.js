@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -21,11 +22,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+        type: 'asset/resource',
       },
     ],
   },

@@ -1,0 +1,38 @@
+.nav-container {
+  background-color: #004332;
+  color: #c0a159;
+  display: flex;
+  height: 5rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+#nav-logo {
+  height: 50px;
+  width: 120px;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-item:hover {
+  background-color: #c0a159;
+  color: #004332;
+  padding: 0 4px;
+}
+
+footer {
+  background-color: #004332;
+  color: #c0a159;
+  position: absolute;
+  height: 5rem;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  top: 89%;
+  padding: 20px 0;
+}
