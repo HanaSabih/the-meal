@@ -8,9 +8,17 @@
     "start": "webpack serve --open",
     "build": "webpack"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HanaSabih/the-meal.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HanaSabih/the-meal/issues"
+  },
+  "homepage": "https://github.com/HanaSabih/the-meal#readme",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.20.11",
     "babel-eslint": "^10.1.0",
