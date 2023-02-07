@@ -24,3 +24,14 @@
   color: #004332;
   padding: 0 4px;
 }
+footer {
+    background-color: #004332;
+    color: #C0A159;
+    position: absolute;
+    height: 5rem;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    top: 89%;
+    padding: 20px 0;
+}
