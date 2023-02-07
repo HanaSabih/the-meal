@@ -1,4 +1,8 @@
-<<<<<<< Updated upstream
-=======
+import './style.css';
+import logoSrc from './images/logo.png';
 
->>>>>>> Stashed changes
+const logoLink = document.querySelector('.logo-link');
+const logo = new Image();
+logo.src = logoSrc;
+logo.id = 'nav-logo';
+logoLink.appendChild(logo);
