@@ -1,4 +1,4 @@
-// import { commentBtnAction } from "./modal.js";
+import { commentBtnAction } from "./modal.js";
 
 const menuCategories = document.querySelector(".menuCategories");
 const menuOptions = document.querySelector(".menuOptions");
@@ -57,7 +57,7 @@ const getOptionsData = async (url) => {
 
   menuOptions.innerHTML = displayMenuOptions.join(" ");
 
-  //   commentBtnAction();
+    commentBtnAction();
 };
 
 export const optionsBtn = () => {
