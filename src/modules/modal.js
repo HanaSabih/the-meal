@@ -1,4 +1,4 @@
-const modalContainer = document.querySelector(".modalContainer");
+// const modalContainer = document.querySelector(".modalContainer");
 const modalTitle = document.querySelector(".modal-title");
 const modalImg = document.querySelector(".modalImg");
 
