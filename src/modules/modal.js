@@ -1,3 +1,5 @@
+import { getComments } from "./involvement";
+
 // const modalContainer = document.querySelector(".modalContainer");
 const modalTitle = document.querySelector(".modal-title");
 const modalImg = document.querySelector(".modalImg");
@@ -5,6 +7,8 @@ const modalImg = document.querySelector(".modalImg");
 const categoryMdl = document.querySelector(".categoryMdl");
 const areaMdl = document.querySelector(".areaMdl");
 const tagsMdl = document.querySelector(".tagsMdl");
+
+const commDisplay = document.querySelector(".comntContainer");
 
 // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772
 
@@ -18,6 +22,7 @@ export const commentBtnAction = () => {
       e.preventDefault();
       const commentIdS = commentBtn.closest(".singleMeal").dataset.id;
       setMealUrl(commentIdS);
+      displayComments(commentIdS);
     });
   });
 };
@@ -32,3 +37,11 @@ const getMealData = async (url) => {
   areaMdl.innerHTML = "Area: " + mealDes.strArea;
   tagsMdl.innerHTML = "Tags: " + mealDes.strTags;
 };
+const displayComments = (hostId) => {
+  const allComments = getComments(hostId);
+  let cmntsMarkup = "";
+  cmntsMarkup = allComments.map(
+    (item) => `<li>${item.creation_date} - ${item.username} <br> ${item.comment}</li>`
+  );
+  commDisplay.innerHTML = cmntsMarkup.join(" ");
+}
