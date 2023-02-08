@@ -1,4 +1,4 @@
-// import { commentBtnAction } from "./modal.js";
+// import { likeActions } from "./likes.js";
 
 const menuCategories = document.querySelector(".menuCategories");
 const menuOptions = document.querySelector(".menuOptions");
@@ -17,23 +17,38 @@ export const getData = async (url) => {
   const allCategories = resultData.meals;
   let displayMenuCategories = "";
   displayMenuCategories = allCategories.map(
-    (item) => `<button class="categoryslctd" >${item.strCategory}</button>`
+    (item) =>
+      `<button class="categoryslctd" >${item.strCategory}</button><span class="cntspnmeals dNone" data-user="${item.strCategory}"  ></span>`
   );
   menuCategories.innerHTML = displayMenuCategories.join(" ");
   optionsBtn();
 };
 
-const setOptionsUrl = (element) => {
-  getOptionsData(
-    "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + element
-  );
+// const setOptionsUrl = (element) => {
+//   getOptionsData(
+//     "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + element
+//   );
+//
+// };
+const countMealsFct = (elm, ctn) => {
+  const cntspnmeals = document.querySelectorAll(".cntspnmeals");
+  cntspnmeals.forEach((countsMl) => {
+    if (countsMl.dataset.user === elm) {
+      countsMl.textContent = ctn;
+    }
+  });
 };
+
 // display all meals
-const getOptionsData = async (url) => {
+const getOptionsData = async (element) => {
+  const url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + element;
   menuOptions.innerHTML = "";
+
   const response = await fetch(url);
   const resultData = await response.json();
   const allOptions = resultData.meals;
+  const mealsCount = Object.keys(resultData.meals).length;
+  countMealsFct(element, mealsCount);
 
   const displayMenuOptions = allOptions.map(
     (item) => `
@@ -42,8 +57,8 @@ const getOptionsData = async (url) => {
       <div class="card-body d-flex flex-column">
         <h5 class="card-title">${item.strMeal}</h5>
         <h5 class="card-title">${item.idMeal}</h5>
-        <a href="#" class="btn unLikeBtn">🤍</a>
-        <a href="#" class="btn likeBtn">❤️</a>
+        <a href="#" class="btn likeButton">🤍</a>
+        
         <span class="displayLikes">0</span>
         <p>Likes</p>
         <button type="button" class="btn btn-primary commentBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Comments
@@ -56,18 +71,30 @@ const getOptionsData = async (url) => {
   );
 
   menuOptions.innerHTML = displayMenuOptions.join(" ");
-
+  //   likeActions();
   //   commentBtnAction();
 };
 
 export const optionsBtn = () => {
-  setOptionsUrl("Seafood");
+  //   getOptionsData("Seafood");
+
   const options = document.querySelectorAll(".categoryslctd");
   options.forEach((opt) => {
     opt.addEventListener("click", (e) => {
       e.preventDefault();
       const category = e.target.textContent;
-      setOptionsUrl(category);
+
+      document.querySelector(".menuActive")
+        ? document.querySelector(".menuActive").classList.remove("menuActive")
+        : "";
+      e.target.classList.add("menuActive");
+
+      for (let i = 0; i < options.length; i++) {
+        options[i].nextSibling.style.display = "none";
+      }
+      e.target.nextSibling.style.display = "inline-block";
+
+      getOptionsData(category);
     });
   });
 };
