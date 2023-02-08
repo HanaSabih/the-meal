@@ -1,11 +1,11 @@
 const appLink = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/7P9rWHY7WsKk1rSNM8nF/comments';
 
-export const postComment = async (name, message) => {
+export const postComment = async (MealId, name, message) => {
     if(name.value && message.value) {
         await fetch(appLink, {
             method: 'post',
             body: JSON.stringify({
-                item_id: "item1",
+                item_id: MealId,
                 username: name.value,
                 comment: message.value,
             }),
