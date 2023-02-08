@@ -92,3 +92,16 @@ a {
 .modalImg {
   height: 15rem;
 }
+.menuActive {
+  background-color: #004332;
+  color: #c0a159;
+}
+.dBlock {
+  display: block;
+}
+.dNone {
+  display: none;
+}
+/* .cntspnmeals {
+  display: none;
+} */
