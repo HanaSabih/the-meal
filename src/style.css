@@ -33,6 +33,62 @@ footer {
   width: 100%;
   text-align: center;
   align-content: center;
-  top: 89%;
   padding: 20px 0;
+}
+
+.greenColor {
+  color: #004332;
+}
+.greenBg {
+  background-color: #004332;
+}
+
+.greenBorderTB {
+  border: 0;
+  border-bottom: 1rem solid #004332;
+  border-top: 1rem solid #004332;
+}
+
+.yellowColor {
+  color: #c0a159;
+}
+
+.yellowBorderTB {
+  border: 0;
+  border-bottom: 0.1rem solid #c0a159;
+  border-top: 0.1rem solid #c0a159;
+}
+
+.whiteBg {
+  background-color: #ecebe6;
+}
+
+/* side nav  */
+a {
+  text-decoration: none;
+}
+/* menu list */
+.ListMenu {
+  color: #c0a159;
+  border: 0;
+  border-bottom: 0.1rem solid #c0a159;
+  border-top: 0.1rem solid #c0a159;
+}
+.ListMenu:hover {
+  color: #004332;
+  background-color: #c0a159;
+}
+/* menu meals */
+.categoryslctd {
+  color: #004332;
+  border: 0;
+  border-bottom: 0.1rem solid #004332;
+  border-top: 0.1rem solid #004332;
+}
+.categoryslctd:hover {
+  color: #c0a159;
+  background-color: #004332;
+}
+.modalImg {
+  height: 15rem;
 }
