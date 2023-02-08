@@ -46,16 +46,15 @@ const getMealData = async (url) => {
 const displayComments = (hostId) => {
   const allComments = getComments(hostId);
   let cmntsMarkup = "";
-  cmntsMarkup = allComments.map(
-    (item) => `<li>${item.creation_date} - ${item.username} <br> ${item.comment}</li>`
-  );
+  allComments.forEach((item) => {
+    cmntsMarkup += `<li>${item.creation_date} - ${item.username} <br> ${item.comment}</li>`
+  })
   commDisplay.innerHTML = cmntsMarkup.join(" ");
-}
+};
 
 addCmtBtn.onsubmit = (e) => {
   e.preventDefault();
   const mealId = addCmtBtn.closest(".singleMeal").dataset.id;
   postComment(mealId, user, message);
   displayComments(mealId);
-  
-}
+};
