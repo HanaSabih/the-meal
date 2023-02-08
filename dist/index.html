@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>the meal</title>
@@ -17,8 +17,7 @@
   <body>
     <header>
       <nav class="nav-container">
-        <a class="logo-link" href="#">
-        </a>
+        <a class="logo-link" href="#"> </a>
         <ul class="nav-list">
           <li class="nav-item">
             <a class="nav-link" href="#">HOURS & LOCATION</a>
@@ -35,6 +34,137 @@
         </ul>
       </nav>
     </header>
+    <!-- content -->
+    <div class="container-fluid d-flex flex-row">
+      <!-- aside nav -->
+
+      <div class="d-flex flex-column w-25 greenBg p-5 text-center">
+        <h2 class="yellowColor fs-1">List Menu</h2>
+        <div class="d-grid justify-content-center fs-3">
+          <button
+            class="ListMenu greenBg yellowColor yellowBorderTB my-3"
+            id="ListMenuCategories"
+          >
+            Categories
+          </button>
+          <button
+            class="ListMenu greenBg yellowColor yellowBorderTB my-3"
+            id="ListMenuArea"
+          >
+            Area
+          </button>
+          <button
+            class="ListMenu greenBg yellowColor yellowBorderTB my-3"
+            id="ListMenuIngredients"
+          >
+            Ingredients
+          </button>
+        </div>
+      </div>
+      <section class="w-75">
+        <div class="container-fluid text-center">
+          <h1>MENU</h1>
+          <div class="d-flex p-5 menuCategories"></div>
+          <div class="menuOptions row row-cols-5"></div>
+          <!-- modal section -->
+          <div class="modalContainer">
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="" class="card-img-top modalImg" alt="..." />
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                    <span class="categoryMdl"></span><br />
+                    <span class="areaMdl"></span><br />
+                    <span class="tagsMdl"></span>
+                  </div>
+                  <!-- comment section -->
+                  <div class="modal-body commentCtr">
+                    <!-- display comments section -->
+                    <div class="viewComments">
+                      <h2 class="fs-5">
+                        Comments <span class="commentsNum">0</span>
+                      </h2>
+                      <ul class="comntContainer list-unstyled">
+                        <li>hana</li>
+                        <li>salim</li>
+                      </ul>
+                    </div>
+                    <!-- add comment section -->
+                    <div class="addComments">
+                      <h2 class="fs-5">Add a comment</h2>
+                      <form id="addCmtForm">
+                        <div class="mb-3">
+                          <label
+                            for="nameCmt"
+                            class="form-label d-none"
+                          ></label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="nameCmt"
+                            placeholder="Your Name"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label
+                            for="textCmt"
+                            class="form-label d-none"
+                          ></label>
+                          <textarea
+                            class="form-control"
+                            id="textCmt"
+                            rows="3"
+                            placeholder="Your Insights"
+                          ></textarea>
+                        </div>
+                        <span class="warningLabel d-none"
+                          >Please enter username and comment</span
+                        >
+                        <button type="submit" class="btn btn-primary">
+                          Comment
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <!-- end comment section -->
+                  <!--  reservation section -->
+                  <div class="modal-body reservationCtr"></div>
+                  <!-- end reservation section -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- end content -->
+
+    <footer>
+      <span>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+          <img
+            alt="Creative Commons License"
+            src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png"
+          />
+        </a>
+        Created by Microverse under CC License
+      </span>
+    </footer>
     <!-- bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
