@@ -10,6 +10,7 @@ const areaMdl = document.querySelector(".areaMdl");
 const tagsMdl = document.querySelector(".tagsMdl");
 
 const commDisplay = document.querySelector(".comntContainer");
+const commCount = document.querySelector(".commentsNum");
 const addCmtBtn = document.querySelector("#addCmtForm");
 const user = document.querySelector("#nameCmt");
 const message = document.querySelector("#textCmt");
@@ -27,12 +28,14 @@ export const commentBtnAction = () => {
       e.preventDefault();
       const commentIdS = commentBtn.closest(".singleMeal").dataset.id;
       setMealUrl(commentIdS);
+      displayComments(commentIdS);
     });
   });
 };
 
-modal.onload = () => {
-  displayComments(modalId.id);
+const changeId = () => {
+  const newId = modalId.getAttribute("id");
+  return newId;
 }
 
 const getMealData = async (url) => {
@@ -50,17 +53,23 @@ const getMealData = async (url) => {
 
 const displayComments = async (hostId) => {
   const allComments = await getComments(hostId);
+  if(allComments === 0) {
+    return;
+  }
   let cmntsMarkup = "";
   allComments.forEach((item) => {
     cmntsMarkup += `<li>${item.creation_date} - ${item.username} <br> ${item.comment}</li>`
   })
   commDisplay.innerHTML = cmntsMarkup;
+  commCount.innerHTML = allComments.length;
 };
 
-addCmtBtn.onsubmit = (e) => {
+addCmtBtn.onsubmit = async (e) => {
   e.preventDefault();
-  const mealId = modalId.getAttribute("id");
+  console.log(modalId);
+  const mealId = changeId();
+  console.log(mealId)
   postComment(mealId, user, message);
-  displayComments(mealId);
+  await displayComments(mealId);
   addCmtBtn.reset();
 };
