@@ -19,9 +19,11 @@ export const postComment = async (MealId, name, message) => {
 export const getComments = async (hostId) => {
     const commentLink = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7P9rWHY7WsKk1rSNM8nF/comments?item_id=' + hostId;
     const response = await fetch(commentLink);
-    const retrieved = await response.json();
-    if(retrieved.error) {
-        return 0;
+    if(response.ok) {
+        const retrieved = await response.json();
+        return retrieved;
     }
-    return retrieved;
+    else if(response.status === 400){
+        return [];        
+    }
 }

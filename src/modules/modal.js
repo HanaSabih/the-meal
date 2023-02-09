@@ -1,6 +1,5 @@
 import { postComment, getComments } from "./involvement";
 
-const modal = document.querySelector("#exampleModal");
 const modalTitle = document.querySelector(".modal-title");
 const modalImg = document.querySelector(".modalImg");
 const modalId = document.querySelector("#mdl-Id");
@@ -14,8 +13,6 @@ const commCount = document.querySelector(".commentsNum");
 const addCmtBtn = document.querySelector("#addCmtForm");
 const user = document.querySelector("#nameCmt");
 const message = document.querySelector("#textCmt");
-
-// https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772
 
 const setMealUrl = (mealId) => {
   getMealData("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealId);
@@ -66,9 +63,7 @@ const displayComments = async (hostId) => {
 
 addCmtBtn.onsubmit = async (e) => {
   e.preventDefault();
-  console.log(modalId);
   const mealId = changeId();
-  console.log(mealId)
   postComment(mealId, user, message);
   await displayComments(mealId);
   addCmtBtn.reset();
