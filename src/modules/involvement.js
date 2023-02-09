@@ -12,7 +12,8 @@ export const postComment = async (MealId, name, message) => {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
-        });
+        })
+        .then((response) => console.log(response));
     }
 };
 
