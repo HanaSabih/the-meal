@@ -2,3 +2,22 @@ involvement API:
 url: https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/
 ID: 7P9rWHY7WsKk1rSNM8nF
 comments url: https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/7P9rWHY7WsKk1rSNM8nF/comments
+
+
+# To post a comment, an Id must be included as a parameter:
+
+fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7P9rWHY7WsKk1rSNM8nF/comments?item_id=#', {
+    method: 'post',
+    body: JSON.stringify({
+        item_id: #
+        username: 'Al',
+        comment: 'Tasty',
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+
+# To get comments, the Id must be included in the url:
+
+fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7P9rWHY7WsKk1rSNM8nF/comments?item_id=#')

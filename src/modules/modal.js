@@ -3,6 +3,7 @@ import { postComment, getComments } from "./involvement";
 // const modalContainer = document.querySelector(".modalContainer");
 const modalTitle = document.querySelector(".modal-title");
 const modalImg = document.querySelector(".modalImg");
+const modalId = document.querySelector("#mdl-Id");
 
 const categoryMdl = document.querySelector(".categoryMdl");
 const areaMdl = document.querySelector(".areaMdl");
@@ -26,7 +27,6 @@ export const commentBtnAction = () => {
       e.preventDefault();
       const commentIdS = commentBtn.closest(".singleMeal").dataset.id;
       setMealUrl(commentIdS);
-      displayComments(commentIdS);
     });
   });
 };
@@ -37,6 +37,7 @@ const getMealData = async (url) => {
   const mealDes = resultData.meals[0];
   modalTitle.innerHTML = mealDes.strMeal;
   modalImg.src = mealDes.strMealThumb;
+  modalId.id = mealDes.idMeal;
 
   categoryMdl.innerHTML = "Category: " + mealDes.strCategory;
   areaMdl.innerHTML = "Area: " + mealDes.strArea;
@@ -54,7 +55,6 @@ const displayComments = (hostId) => {
 
 addCmtBtn.onsubmit = (e) => {
   e.preventDefault();
-  const mealId = addCmtBtn.closest(".singleMeal").dataset.id;
-  postComment(mealId, user, message);
-  displayComments(mealId);
+  postComment(user, message);
+  // displayComments(mealId);
 };

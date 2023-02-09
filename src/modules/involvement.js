@@ -1,4 +1,4 @@
-const appLink = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/7P9rWHY7WsKk1rSNM8nF/comments';
+const appLink = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7P9rWHY7WsKk1rSNM8nF/comments';
 
 export const postComment = async (MealId, name, message) => {
     if(name.value && message.value) {
@@ -17,7 +17,7 @@ export const postComment = async (MealId, name, message) => {
 };
 
 export const getComments = async (hostId) => {
-    const commentLink = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/7P9rWHY7WsKk1rSNM8nF/comments?item_id=' + hostId;
+    const commentLink = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7P9rWHY7WsKk1rSNM8nF/comments?item_id=' + hostId;
     const response = await fetch(commentLink);
     const retrieved = await response.json();
     return retrieved;
