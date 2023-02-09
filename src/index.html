@@ -74,13 +74,11 @@
                   <!-- comment section -->
                   <div class="modal-body commentCtr">
                     <!-- display comments section -->
-                    <div class="viewComments">
+                    <div class="viewComments" id="mdl-Id">
                       <h2 class="fs-5">
-                        Comments <span class="commentsNum">0</span>
+                        Comments <span class="commentsNum"></span>
                       </h2>
                       <ul class="comntContainer list-unstyled">
-                        <li>hana</li>
-                        <li>salim</li>
                       </ul>
                     </div>
                     <!-- add comment section -->
@@ -96,6 +94,7 @@
                             type="text"
                             class="form-control"
                             id="nameCmt"
+                            required
                             placeholder="Your Name"
                           />
                         </div>
@@ -107,6 +106,7 @@
                           <textarea
                             class="form-control"
                             id="textCmt"
+                            required
                             rows="3"
                             placeholder="Your Insights"
                           ></textarea>

@@ -1,3 +1,5 @@
+
+import { commentBtnAction } from "./modal.js";
 import { likeButtonAction, getLikesNumber } from "./likes.js";
 
 const menuCategories = document.querySelector(".menuCategories");
@@ -74,6 +76,8 @@ const getOptionsData = async (element) => {
   );
 
   menuOptions.innerHTML = displayMenuOptions.join(" ");
+
+  commentBtnAction();
   likeButtonAction();
   getLikesNumber();
 };
