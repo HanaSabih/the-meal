@@ -1,4 +1,5 @@
-import { postComment, getComments } from "./involvement";
+import getCount from "./commentcounter.js";
+import { postComment, getComments } from "./involvement.js";
 
 const modalTitle = document.querySelector(".modal-title");
 const modalImg = document.querySelector(".modalImg");
@@ -8,8 +9,7 @@ const categoryMdl = document.querySelector(".categoryMdl");
 const areaMdl = document.querySelector(".areaMdl");
 const tagsMdl = document.querySelector(".tagsMdl");
 
-const commDisplay = document.querySelector(".comntContainer");
-const commCount = document.querySelector(".commentsNum");
+export const commDisplay = document.querySelector(".comntContainer");
 const addCmtBtn = document.querySelector("#addCmtForm");
 const user = document.querySelector("#nameCmt");
 const message = document.querySelector("#textCmt");
@@ -55,16 +55,16 @@ const displayComments = async (hostId) => {
   }
   let cmntsMarkup = "";
   allComments.forEach((item) => {
-    cmntsMarkup += `<li>${item.creation_date} - ${item.username} <br> ${item.comment}</li>`
+    cmntsMarkup += `<li class=""shown-comment>${item.creation_date} - ${item.username} <br> ${item.comment}</li>`
   })
   commDisplay.innerHTML = cmntsMarkup;
-  commCount.innerHTML = allComments.length;
+  getCount(commDisplay);
 };
 
 addCmtBtn.onsubmit = async (e) => {
   e.preventDefault();
   const mealId = changeId();
   await postComment(mealId, user, message)
-   displayComments(mealId);
+  displayComments(mealId);
   addCmtBtn.reset();
 };
