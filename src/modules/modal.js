@@ -27,6 +27,7 @@ export const commentBtnAction = () => {
       e.preventDefault();
       const commentIdS = commentBtn.closest(".singleMeal").dataset.id;
       setMealUrl(commentIdS);
+      displayComments(modalId.id);
     });
   });
 };
@@ -55,6 +56,7 @@ const displayComments = (hostId) => {
 
 addCmtBtn.onsubmit = (e) => {
   e.preventDefault();
-  postComment(user, message);
-  // displayComments(mealId);
+  const mealId = modalId.getAttribute("id");
+  postComment(mealId, user, message);
+  displayComments(mealId);
 };
