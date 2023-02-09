@@ -64,7 +64,7 @@ const displayComments = async (hostId) => {
 addCmtBtn.onsubmit = async (e) => {
   e.preventDefault();
   const mealId = changeId();
-  postComment(mealId, user, message);
-  await displayComments(mealId);
+  await postComment(mealId, user, message)
+   displayComments(mealId);
   addCmtBtn.reset();
 };
