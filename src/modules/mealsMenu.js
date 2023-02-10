@@ -21,7 +21,7 @@ export const mealsCnt = (data) => {
 };
 
 // display all meals
-const getOptionsData = async (element) => {
+export const getOptionsData = async (element) => {
   const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${element}`;
   menuOptions.innerHTML = '';
 
@@ -33,15 +33,14 @@ const getOptionsData = async (element) => {
 
   const displayMenuOptions = allOptions.map(
     (item) => `
-        <div class="card m-2 px-0 singleMeal shadow-lg p-3 mb-5 bg-body rounded" style="width: 12rem;" id="${item.idMeal}" data-id="${item.idMeal}">
+        <div class="card m-2 px-0 singleMeal shadow-lg p-3 mb-5 bg-body rounded" style="width: 17rem;" id="${item.idMeal}" data-id="${item.idMeal}">
       <img src="${item.strMealThumb}" class="card-img-top" alt="...">
       <div class="card-body d-flex flex-column">
         <h5 class="card-title">${item.strMeal}</h5>
-        <h5 class="card-title">${item.idMeal}</h5>
         <button class="likeButton border-0 bg-transparent" >🤍</button>
         
         <span class="displayLikes">0</span>
-        <p>Likes</p>
+        <span>Likes</span>
         <button type="button" class="btn btn-primary commentBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Comments
   </button>
         
@@ -55,18 +54,12 @@ const getOptionsData = async (element) => {
   likeButtonAction();
   getLikesNumber();
 };
-
 export const optionsBtn = () => {
   const options = document.querySelectorAll('.categoryslctd');
   options.forEach((opt) => {
     opt.addEventListener('click', (e) => {
       e.preventDefault();
       const category = e.target.textContent;
-
-      document.querySelector('.menuActive')
-        ? document.querySelector('.menuActive').classList.remove('menuActive')
-        : '';
-      e.target.classList.add('menuActive');
       getOptionsData(category);
     });
   });
@@ -81,7 +74,7 @@ export const getData = async (url) => {
   displayMenuCategories = allCategories.map(
     (item) => `<div class="position-relative">
       <button type="button"  class="btn categoryslctd px-2 py-1 fs-4 m-3 " >${item.strCategory}</button>
-      <span class="cntspnmeals   position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" data-user="${item.strCategory}"  ></span>
+      <span class="cntspnmeals badge  position-absolute top-0 start-100 translate-middle  rounded-pill bg-danger" data-user="${item.strCategory}"  ></span>
       </div>`,
   );
   menuCategories.innerHTML = displayMenuCategories.join(' ');

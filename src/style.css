@@ -84,27 +84,26 @@ a {
 
 /* menu meals */
 
-/* .optionsbtn .optionsbtn {
-  color: #004332;
-  border: 0;
-  border-bottom: 0.1rem solid #004332;
-  border-top: 0.1rem solid #004332;
-}
-.optionsbtn:hover {
-  color: #c0a159;
-  background-color: #004332;
-} */
 .categoryslctd {
-  color: #004332;
-  background-color: #ecebe6;
   border: 0;
+  background-color: #004332;
+  color: #c0a159;
+  border-bottom: 0.2rem solid #c0a159;
+  border-top: 0.2rem solid #c0a159;
+}
+
+.categoryslctd:hover,
+.commentBtn {
+  color: #004332;
+  background-color: #c0a159;
   border-bottom: 0.2rem solid #004332;
   border-top: 0.2rem solid #004332;
 }
 
-.categoryslctd:hover {
-  color: #c0a159;
+.commentBtn:hover {
+  border: 0;
   background-color: #004332;
+  color: #c0a159;
   border-bottom: 0.2rem solid #c0a159;
   border-top: 0.2rem solid #c0a159;
 }
@@ -128,9 +127,6 @@ a {
   display: none;
 }
 
-/* .cntspnmeals {
-  display: none;
-} */
 .contAll {
   min-height: 50rem;
 }
