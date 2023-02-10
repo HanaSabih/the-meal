@@ -1,45 +1,29 @@
+import { commentBtnAction } from './modal.js';
+import { likeButtonAction, getLikesNumber } from './likes.js';
 
-import { commentBtnAction } from "./modal.js";
-import { likeButtonAction, getLikesNumber } from "./likes.js";
+const menuCategories = document.querySelector('.menuCategories');
+const menuOptions = document.querySelector('.menuOptions');
 
-const menuCategories = document.querySelector(".menuCategories");
-const menuOptions = document.querySelector(".menuOptions");
-
-const menuListUrl = "https://www.themealdb.com/api/json/v1/1/list.php?c=list";
-
-export const getData = async (url) => {
-  menuCategories.innerHTML = "";
-  const response = await fetch(url);
-  const resultData = await response.json();
-  const allCategories = resultData.meals;
-  let displayMenuCategories = "";
-  displayMenuCategories = allCategories.map(
-    (item) =>
-      `<div class="position-relative">
-      <button type="button"  class="btn categoryslctd px-2 py-1 fs-4 m-3 " >${item.strCategory}</button>
-      <span class="cntspnmeals   position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" data-user="${item.strCategory}"  ></span>
-      </div>`
-  );
-  menuCategories.innerHTML = displayMenuCategories.join(" ");
-  optionsBtn();
-};
+// const menuListUrl = 'https://www.themealdb.com/api/json/v1/1/list.php?c=list';
 
 export const itemsCounter = (elm, options) => {
-  const cntspnmeals = document.querySelectorAll(".cntspnmeals");
+  const cntspnmeals = document.querySelectorAll('.cntspnmeals');
   cntspnmeals.forEach((countsMl) => {
     if (countsMl.dataset.user === elm) {
       countsMl.textContent = `(${options})`;
     }
   });
 };
+
 export const mealsCnt = (data) => {
   const mealsCount = Object.keys(data).length;
   return mealsCount;
 };
+
 // display all meals
 const getOptionsData = async (element) => {
-  const url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + element;
-  menuOptions.innerHTML = "";
+  const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${element}`;
+  menuOptions.innerHTML = '';
 
   const response = await fetch(url);
   const resultData = await response.json();
@@ -62,10 +46,10 @@ const getOptionsData = async (element) => {
   </button>
         
       </div>
-    </div>`
+    </div>`,
   );
 
-  menuOptions.innerHTML = displayMenuOptions.join(" ");
+  menuOptions.innerHTML = displayMenuOptions.join(' ');
 
   commentBtnAction();
   likeButtonAction();
@@ -73,17 +57,33 @@ const getOptionsData = async (element) => {
 };
 
 export const optionsBtn = () => {
-  const options = document.querySelectorAll(".categoryslctd");
+  const options = document.querySelectorAll('.categoryslctd');
   options.forEach((opt) => {
-    opt.addEventListener("click", (e) => {
+    opt.addEventListener('click', (e) => {
       e.preventDefault();
       const category = e.target.textContent;
 
-      document.querySelector(".menuActive")
-        ? document.querySelector(".menuActive").classList.remove("menuActive")
-        : "";
-      e.target.classList.add("menuActive");
+      document.querySelector('.menuActive')
+        ? document.querySelector('.menuActive').classList.remove('menuActive')
+        : '';
+      e.target.classList.add('menuActive');
       getOptionsData(category);
     });
   });
+};
+
+export const getData = async (url) => {
+  menuCategories.innerHTML = '';
+  const response = await fetch(url);
+  const resultData = await response.json();
+  const allCategories = resultData.meals;
+  let displayMenuCategories = '';
+  displayMenuCategories = allCategories.map(
+    (item) => `<div class="position-relative">
+      <button type="button"  class="btn categoryslctd px-2 py-1 fs-4 m-3 " >${item.strCategory}</button>
+      <span class="cntspnmeals   position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" data-user="${item.strCategory}"  ></span>
+      </div>`,
+  );
+  menuCategories.innerHTML = displayMenuCategories.join(' ');
+  optionsBtn();
 };
