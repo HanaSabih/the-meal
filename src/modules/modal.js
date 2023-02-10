@@ -19,6 +19,7 @@ const setMealUrl = (mealId) => {
   getMealData("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealId);
 };
 
+// Activate Popup Button 
 export const commentBtnAction = () => {
   const commentBtnS = document.querySelectorAll(".commentBtn");
   commentBtnS.forEach((commentBtn) => {
@@ -36,6 +37,7 @@ const changeId = () => {
   return newId;
 }
 
+// populate popup
 const getMealData = async (url) => {
   const response = await fetch(url);
   const resultData = await response.json();
@@ -49,6 +51,7 @@ const getMealData = async (url) => {
   tagsMdl.innerHTML = "Tags: " + mealDes.strTags;
 };
 
+// Display comments in popup
 const displayComments = async (hostId) => {
   const allComments = await getComments(hostId);
   if(allComments === 0) {
@@ -62,12 +65,16 @@ const displayComments = async (hostId) => {
   const comments = await getCount();
   console.log(comments);
   commCount.innerHTML = comments;
+  addCmtBtnAction();
 };
 
-addCmtBtn.onsubmit = async (e) => {
-  e.preventDefault();
-  const mealId = changeId();
-  await postComment(mealId, user, message)
-  displayComments(mealId);
-  addCmtBtn.reset();
+// Add comment function
+const addCmtBtnAction = () => {
+  addCmtBtn.onsubmit = async (e) => {
+    e.preventDefault();
+    const mealId = changeId();
+    await postComment(mealId, user, message);
+    displayComments(mealId);
+    addCmtBtn.reset();
+  };
 };

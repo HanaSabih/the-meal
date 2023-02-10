@@ -5,9 +5,6 @@ import { likeButtonAction, getLikesNumber } from "./likes.js";
 const menuCategories = document.querySelector(".menuCategories");
 const menuOptions = document.querySelector(".menuOptions");
 
-// menuCategories
-// https://www.themealdb.com/api/json/v1/1/list.php?c=list
-
 const menuListUrl = "https://www.themealdb.com/api/json/v1/1/list.php?c=list";
 
 export const getData = async (url) => {
@@ -27,12 +24,6 @@ export const getData = async (url) => {
   optionsBtn();
 };
 
-// const setOptionsUrl = (element) => {
-//   getOptionsData(
-//     "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + element
-//   );
-//
-// };
 export const itemsCounter = (elm, options) => {
   const cntspnmeals = document.querySelectorAll(".cntspnmeals");
   cntspnmeals.forEach((countsMl) => {
@@ -54,7 +45,6 @@ const getOptionsData = async (element) => {
   const resultData = await response.json();
   const allOptions = resultData.meals;
   const count = mealsCnt(allOptions);
-  // const mealsCount = Object.keys(allOptions).length;
   itemsCounter(element, count);
 
   const displayMenuOptions = allOptions.map(
@@ -93,12 +83,6 @@ export const optionsBtn = () => {
         ? document.querySelector(".menuActive").classList.remove("menuActive")
         : "";
       e.target.classList.add("menuActive");
-
-      // for (let i = 0; i < options.length; i++) {
-      //   options[i].nextSibling.style.visibility = "hidden";
-      // }
-      // e.target.nextSibling.style.visibility = "visible";
-
       getOptionsData(category);
     });
   });
