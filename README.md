@@ -5,7 +5,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
-    - [Key Features](#key-features)
+  - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
@@ -27,7 +27,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-
 - **[Webpack configured]**
 - **[Dynamic build]**
 - **[API integration]**
@@ -38,7 +37,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://hanasabih.github.io/the-meal/dist)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -46,9 +45,8 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps:
--[Clone](https://github.com/HanaSabih/the-meal.git/) the repository to your local environment.
--Visit the repository, and click 'Code' to obtain the SSH and Github CLI urls instead. 
+To get a local copy up and running, follow these steps: -[Clone](https://github.com/HanaSabih/the-meal.git/) the repository to your local environment.
+-Visit the repository, and click 'Code' to obtain the SSH and Github CLI urls instead.
 
 ### Prerequisites
 
@@ -59,11 +57,11 @@ Jest
 
 Clone this repository to your desired folder:
 
-
 ### Run tests
 
 <!-- To run tests, run the following command: -->
-'$npm run test' in your terminal. Tests will be run on the comments and items counter functions. 
+
+'$npm run test' in your terminal. Tests will be run on the comments and items counter functions.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,7 +74,6 @@ Clone this repository to your desired folder:
 - GitHub: [@HanaSabih](https://github.com/HanaSabih)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
 
 👤 **Alwyn Androvelle**
 
@@ -111,10 +108,10 @@ Feel free to check the [issues page](https://github.com/HanaSabih/the-meal/issue
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 <!-- I would like to thank... -->
+
 We would like to thank Microverse institution for the training relevant to the completion of this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
