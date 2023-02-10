@@ -10,6 +10,7 @@ const areaMdl = document.querySelector(".areaMdl");
 const tagsMdl = document.querySelector(".tagsMdl");
 
 export const commDisplay = document.querySelector(".comntContainer");
+const commCount = document.querySelector(".commentsNum");
 const addCmtBtn = document.querySelector("#addCmtForm");
 const user = document.querySelector("#nameCmt");
 const message = document.querySelector("#textCmt");
@@ -55,10 +56,12 @@ const displayComments = async (hostId) => {
   }
   let cmntsMarkup = "";
   allComments.forEach((item) => {
-    cmntsMarkup += `<li class=""shown-comment>${item.creation_date} - ${item.username} <br> ${item.comment}</li>`
+    cmntsMarkup += `<li class="shown-comment">${item.creation_date} - ${item.username} <br> ${item.comment}</li>`
   })
   commDisplay.innerHTML = cmntsMarkup;
-  getCount(commDisplay);
+  const comments = await getCount();
+  console.log(comments);
+  commCount.innerHTML = comments;
 };
 
 addCmtBtn.onsubmit = async (e) => {
