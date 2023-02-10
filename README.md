@@ -22,6 +22,7 @@
 # 📖 the-meal <a name="about-project"></a>
 
 **the-meal** is a group capstone project to dynamically build a restaurant website using Javascript, Webpack, a couple of APIs and Jest for testing.
+[Project Presentation](https://drive.google.com/file/d/1dD3gdJoclYL2EUmbS6JrvzrtYi-83_12/view?usp=sharing)
 
 <!-- Features -->
 
