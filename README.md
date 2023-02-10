@@ -10,16 +10,11 @@
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -43,7 +38,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://thoth1111.github.io/My-To-Do-List/dist/)
+- [Live Demo Link]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -57,76 +52,18 @@ To get a local copy up and running, follow these steps:
 
 ### Prerequisites
 
-<!-- In order to run this project you need: -->
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+Webpack
+Jest
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
-
-### Install
-
-<!-- Install this project with: -->
-
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
-```
---->
-
-### Usage
-
-<!-- To run the project, execute the following command: -->
-
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
 
 ### Run tests
 
 <!-- To run tests, run the following command: -->
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-<!-- You can deploy this project using: -->
-
-<!--
-Example:
-
-```sh
-
-```
- -->
+'$npm run test' in your terminal. Tests will be run on the comments and items counter functions. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,16 +73,16 @@ Example:
 
 👤 **Hana Sabih**
 
-- GitHub: [@githubhandle](https://github.com/HanaSabih)
+- GitHub: [@HanaSabih](https://github.com/HanaSabih)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 
 👤 **Alwyn Androvelle**
 
-- GitHub: [@githubhandle](https://github.com/thoth1111)
-- Twitter: [@twitterhandle](https://twitter.com/androvelle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/alwyn-androvelle-simiyu/)
+- GitHub: [@Thoth1111](https://github.com/thoth1111)
+- Twitter: [@androvelle](https://twitter.com/androvelle)
+- LinkedIn: [alwyn-androvelle-simiyu](https://linkedin.com/in/alwyn-androvelle-simiyu/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -155,6 +92,7 @@ Example:
 
 - [ ] **Animations**
 - [ ] **Transitions**
+- [ ] **Responsive like icons**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,29 +106,15 @@ Feel free to check the [issues page](https://github.com/HanaSabih/the-meal/issue
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
-
-## ⭐️ Show your support <a name="support"></a>
-
-<!-- If you like this project... -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 <!-- I would like to thank... -->
+We would like to thank Microverse institution for the training relevant to the completion of this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-<!-- - **[Question_1]**
-
-  - [Answer_1] -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -198,6 +122,6 @@ Feel free to check the [issues page](https://github.com/HanaSabih/the-meal/issue
 
 ## 📝 License <a name="Creative Commons license" href="http://creativecommons.org/licenses/by-nc/4.0/"></a>
 
-This project is [CC](./LICENSE) licensed.
+This project is [CC](http://creativecommons.org/licenses/by-nc/4.0/) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
