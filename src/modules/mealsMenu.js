@@ -4,8 +4,6 @@ import { likeButtonAction, getLikesNumber } from './likes.js';
 const menuCategories = document.querySelector('.menuCategories');
 const menuOptions = document.querySelector('.menuOptions');
 
-// const menuListUrl = 'https://www.themealdb.com/api/json/v1/1/list.php?c=list';
-
 export const itemsCounter = (elm, options) => {
   const cntspnmeals = document.querySelectorAll('.cntspnmeals');
   cntspnmeals.forEach((countsMl) => {
