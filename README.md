@@ -63,6 +63,7 @@ Clone this repository to your desired folder:
 <!-- To run tests, run the following command: -->
 
 '$npm run test' in your terminal. Tests will be run on the comments and items counter functions.
+'$npm start' to run the webpack live server.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
